@@ -1,30 +1,172 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+---
+layout: master
+title: Home
+description: Home page for Dharmendra Dhote's webpage and blog 
+---
+
+<div class="container">
+
+	<header class="row">
+	  <div class="col-sm-6 col-md-12" style="margin-top:25px;margin-bottom:25px">
+	    <div class="col-sm-1 col-xs-1">
+	    	<!-- <img style="width:100%" src="{{site.url}}/assets/images/linux_logo.png" > -->
+	    </div>
+	    <div class="col-sm-3 col-xs-3">
+		    <!-- <h1 id="pin">{{site.title}}</h1> -->
+	    </div>
+	  </div>
+	</header>
+	<nav>
+		<div class="row">
+ 			<div class="col-md-5 col-sm-6 col-xs-12">
+				<a href="{{ site.about }}" title="About Me">
+					<div class="tile purple profile">
+						<h3 class="title">Ankit Kulkarni (Devops) </h3>
+						<p> <b style="font-size: 34px;"> &ldquo;</b> <b> I Code Because I Love To, Not Because I Have To </b> <b style="font-size: 34px;"> &rdquo;</b><br>
+				<!-- 		I am a Devops Engineer and code lover. When not on system find me near my bed  -->
+
+						<!-- <i> <u> Devops Engineer who loves linux </u> </i> !  Read more ...  --></p>
+					</div>
+				</a>
+		    </div>
+
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{ site.blog }}" title="Blog"  class="tile red">
+					<h2 class="title">Blog</h2>
+					<i class="icon-blog" style="font-size:5em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.projects}}" title="Projects" class="tile orange" >
+					<h2 class="title">Projects</h2>
+					<i class="icon-p" style="font-size:5em;color:white"></i>
+				</a>
+			</div>
+
+<!-- 			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="feed.xml" title="RSS Feed" class="tile orange">
+					<i class="icon-rss" style="font-size:8em"></i>
+				</a>
+			</div> -->
+		</div>
+
+		<div class="row">
+
+
+
+		<div class="col-md-3 col-sm-4 col-xs-8">
+			<a href="{{site.publications}}" title="Publications" class="tile green" >
+				<h2 class="title">Publications</h2>
+				<i class="icon-p" style="font-size:5em;color:white"></i>
+			</a>
+		</div>
+
+
+<!-- 
+		<div class="col-md-2 col-sm-3 col-xs-6">
+			<a href="{{site.contact}}" title="Contacts" class="tile red" >
+				<h2 class="title">Contact</h2>
+				<i class="icon-c" style="font-size:5em;color:white"></i>
+			</a>
+		</div>
+ -->
+
+		<div class="col-md-2 col-sm-3 col-xs-6">
+			<a href="{{ site.resume }}" title="Resume" class="tile red">
+				<h2 class="title">Resume</h2>
+				<i class="icon-rems" style="font-size:5em"></i> 
+			</a>
+			<br> 
+
+		</div>
+
+		<div class="col-md-2 col-sm-3 col-xs-6">
+			<a href="{{site.more}}" title="More" class="tile blue" >
+				<h2 class="title">More</h2>
+				<i class="icon-m" style="font-size:5em;color:white"></i>
+			</a>
+		</div>
+
+
+<!-- 			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts offset:1 limit:1 %}
+				<a href="{{post.url}}" title="Recent Article">
+					<div class="tile green">
+						<h3 class="title">Recent Article</h3>
+						<h4 class="title">{{ post.title }}</h4>
+						<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+ -->
+
+
+<!-- 
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts limit:1 %}
+				<a href="{{post.url}}" title="Latest Article">
+					<div class="tile red">
+						<h3 class="title">Latest Article</h3>
+						<h4 class="title">{{ post.title }}</h4>
+						<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+ -->
+
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts %}
+					{% if post.featured == true %}
+					<a href="{{post.url}}" title="Featured Article">
+						<div class="tile orange">
+							<h3 class="title">Featured Article</h3>
+							<h4 class="title">{{ post.title }}</h4>
+							<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+						</div>
+					</a>
+					{% break %}
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="row" style="margin-bottom:25px">
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.twitter}}" title="Twitter" class="tile blue">
+					<i class="icon-twtr" style="font-size:8em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.stackoverflow}}" title="StackOverflow" class="tile darken" >
+					<i class="icon-skow" style="font-size:8em;color:white"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.facebook}}" class="tile blue">
+					<i class="icon-fcbk" style="font-size:8em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+
+				<a href="{{site.github}}" title="Github" class="tile purple">
+					<i class="icon-gthb" style="font-size:8em"></i>
+				</a>
+
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.linkedin}}" title="LinkedIn" class="tile blue">
+					<i class="icon-lkin" style="font-size:8em"></i>
+				</a>
+			</div>
+		</div>
+	</nav>
+</div>
